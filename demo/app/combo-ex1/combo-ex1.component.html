@@ -1,0 +1,18 @@
+<lc-scroll-box class="scroll-box1" [sensitivity]="2">
+    <div class="big-area">
+        <p>Click and Drag this area</p>
+        <lc-shift-box class="shift-box1">
+            <div class="child1 lc-shift-hook"></div>
+            <div class="child2 lc-shift-hook"></div>
+            <div class="child3 lc-shift-hook">
+                <lc-scroll-box class="scroll-box2" [sensitivity]="2">
+                    <div class="big-area2">
+                        <lc-shift-box class="shift-box1">
+                                <div class="child1 lc-shift-hook"></div>
+                        </lc-shift-box>
+                    </div>
+                </lc-scroll-box>    
+            </div>
+        </lc-shift-box>
+    </div>
+</lc-scroll-box>

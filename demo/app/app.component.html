@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+    <button 
+    mat-icon-button (click)="snav.toggle()" 
+    [ngClass]="{invisible: !mobileQuery.matches}" >
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span class="title">Liquid Containers</span>
+</mat-toolbar>
+
+<mat-sidenav-container class="example-container">
+    <mat-sidenav 
+    [mode]="mobileQuery.matches ? 'over' : 'side'" 
+    [opened]=!mobileQuery.matches 
+    #snav>
+        <mat-button-toggle-group vertical #group="matButtonToggleGroup">
+            <mat-button-toggle routerLink="/example1">ScrollBox</mat-button-toggle>
+            <mat-button-toggle routerLink="/example2">ShiftBox</mat-button-toggle>
+            <mat-button-toggle routerLink="/example3">Combination</mat-button-toggle>
+        </mat-button-toggle-group> 
+    </mat-sidenav>
+    
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+

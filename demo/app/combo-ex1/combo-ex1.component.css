@@ -1,0 +1,72 @@
+.scroll-box1 {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 30px;
+    height: 80vh;
+}
+
+.big-area {
+    position: absolute; 
+    width: 5000px; 
+    height: 5000px; 
+    background-image: url('/assets/grid.png');
+}
+
+.big-area>p {
+    margin: 10px;
+}
+
+.shift-box1 {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    border: 2px dashed royalblue; 
+}
+
+.child1 {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+}
+
+.child2 {
+    position: absolute;
+    top: 150px;
+    left: 50px;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+}
+
+.child3 {
+    position: absolute;
+    top: 50px;
+    left: 150px;
+    width: 300px;
+    height: 300px;
+    background-color: blueviolet;
+}
+
+
+.scroll-box2 {
+    position: absolute;
+    margin: 0px;
+    height: auto;
+    left: 30px;
+    right: 30px;
+    top: 30px;
+    bottom: 30px;
+    border: 1px dashed black; 
+    
+}
+
+.big-area2 {
+    position: absolute; 
+    width: 1000px; 
+    height: 1000px; 
+    background-image: url('/assets/grid.png');
+}
