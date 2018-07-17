@@ -5,23 +5,23 @@
     height: 80vh;
 }
 
-.big-area {
+.big-area1 {
     position: absolute; 
-    width: 5000px; 
-    height: 5000px; 
+    width: 3000px; 
+    height: 3000px; 
     background-image: url('/assets/grid.png');
 }
 
-.big-area>p {
+.big-area1>p {
     margin: 10px;
 }
 
 .shift-box1 {
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    bottom: 0px;
-    border: 2px dashed royalblue; 
+    left: 50px;
+    right: 50px;
+    top: 50px;
+    bottom: 50px;
+    border: 1px solid royalblue; 
 }
 
 .child1 {
@@ -69,4 +69,12 @@
     width: 1000px; 
     height: 1000px; 
     background-image: url('/assets/grid.png');
+}
+
+.shift-box2 {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    border: 1px solid royalblue; 
 }
