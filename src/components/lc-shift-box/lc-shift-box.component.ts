@@ -1,5 +1,4 @@
 import { Component, ElementRef, Input, OnInit } from '@angular/core';
-import { HammerInput } from '../../core/gestures/gesture-annotations';
 
 export class AbstractElement {
 
@@ -30,7 +29,7 @@ export class AbstractElement {
       return;
     }
 
-    let position: RegExpMatchArray = translate[0].match(/[-\d]+/g);
+    let position: RegExpMatchArray = translate[0].match(/[-\d\.]+/g);
 
     this.left = parseInt(position[0]);
     this.top = parseInt(position[1]);
@@ -55,9 +54,9 @@ export class AbstractElement {
   styleUrls: ['./lc-shift-box.component.css'],
   host:{
     '(pointerdown)':'onPointerDown($event)',
-    '(drag)': 'onMove($event)',
-    '(dragstart)':'onMoveStart($event)',
-    '(dragend)':'onMoveEnd($event)',
+    '(pointermove)': 'onPointerMove($event)',
+    '(pointerup)':'onPointerEnd($event)',
+    '(pointerleave)':'onPointerLeave($event)',
     '(touchmove)':'onTouchMove($event)'
   }
 
@@ -66,17 +65,12 @@ export class LcShiftBox implements OnInit {
 
   @Input() options: any;
 
-  isMoving: boolean;
-
   containerElement: AbstractElement;
 
   movableElement: AbstractElement;
   
-  cursorOffset : { fromLeft: number, fromTop: number } = { fromLeft: 0, fromTop: 0 };
+  pointerOffset : { fromLeft: number, fromTop: number } = { fromLeft: 0, fromTop: 0 };
 
-  // HammerJS events can't stopPropagation();
-  // We use allowMove for prevent moving parent DOM-elements which use same dirrective.
-  // Native browser event onPointerDown sets allowMove true and stops propagation.
   allowMove: boolean = false;
 
   constructor(private elementRef: ElementRef) {}
@@ -85,7 +79,7 @@ export class LcShiftBox implements OnInit {
     this.containerElement = new AbstractElement(this.elementRef.nativeElement);
   }
 
-  onPointerDown(event: Event){
+  onPointerDown(event: PointerEvent){
     let target = event.target as HTMLElement;
 
     // Moveable container can cover other elements, like buttons or other containers.
@@ -97,9 +91,13 @@ export class LcShiftBox implements OnInit {
     
     if ( target.classList.contains("lc-shift-hook") ) {
       let element = this.FindMovableElement(target);
+      
       this.movableElement = new AbstractElement(element);
-
+      
+      // Moves element on the foreground.
       this.containerElement.nativeElement.appendChild(element);
+
+      this.setPointerOffset({x: event.clientX, y: event.clientY});
 
       this.allowMove = true;
     }
@@ -114,40 +112,38 @@ export class LcShiftBox implements OnInit {
     return element;
   }
 
-  onMoveStart(event: HammerInput){
-    
+  public setPointerOffset(pointerPosition: { x: number, y: number }) {
+    this.pointerOffset.fromLeft = pointerPosition.x - this.movableElement.left;
+    this.pointerOffset.fromTop = pointerPosition.y - this.movableElement.top;
+  }
+
+  onPointerMove(event: PointerEvent){
     if (!this.allowMove) return;
-
-    this.isMoving = true;
-    this.setCursorOffset({x: event.center.x, y: event.center.y});
-
-  }
-
-  public setCursorOffset(cursorPosition: { x: number, y: number }) {
-    this.cursorOffset.fromLeft = cursorPosition.x - this.movableElement.left;
-    this.cursorOffset.fromTop = cursorPosition.y - this.movableElement.top;
-  }
-
-  onMove(event: HammerInput){
-   
-    if (!this.isMoving) return;
     
-    this.setElementPosition({ x: event.center.x, y: event.center.y });
+    this.setElementPosition({ x: event.clientX, y: event.clientY });
   }
 
-  public setElementPosition(cursorPosition: { x: number, y: number }) {
-    let left = cursorPosition.x - this.cursorOffset.fromLeft;
-    let top = cursorPosition.y - this.cursorOffset.fromTop;
+  public setElementPosition(pointerPosition: { x: number, y: number }) {
+    let left = pointerPosition.x - this.pointerOffset.fromLeft;
+    let top = pointerPosition.y - this.pointerOffset.fromTop;
     this.movableElement.setElementPosition({left: left, top: top});
   }
 
-  onMoveEnd(event: HammerInput){
-    this.isMoving = false;
+  onPointerEnd(event: PointerEvent){
     this.allowMove = false;
   }
 
+  onPointerLeave(event: PointerEvent){
+    if (this.allowMove){
+      this.allowMove = false;
+      window.getSelection().removeAllRanges();
+    }
+  }
+
   onTouchMove(event: TouchEvent){
-    event.preventDefault();
+    if (this.allowMove) {
+      event.preventDefault();
+    }
   }
 
 }
