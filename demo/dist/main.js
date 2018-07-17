@@ -177,7 +177,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".scroll-box1 {\r\n    margin-left: 50px;\r\n    margin-right: 50px;\r\n    margin-top: 30px;\r\n    height: 80vh;\r\n}\r\n\r\n.big-area {\r\n    position: absolute; \r\n    width: 5000px; \r\n    height: 5000px; \r\n    background-image: url('/ngx-liquid-containers/assets/grid.png');\r\n}\r\n\r\n.big-area>p {\r\n    margin: 10px;\r\n}\r\n\r\n.shift-box1 {\r\n    left: 0px;\r\n    right: 0px;\r\n    top: 0px;\r\n    bottom: 0px;\r\n    border: 2px dashed royalblue; \r\n}\r\n\r\n.child1 {\r\n    position: absolute;\r\n    top: 50px;\r\n    left: 50px;\r\n    width: 50px;\r\n    height: 50px;\r\n    background-color: blue;\r\n}\r\n\r\n.child2 {\r\n    position: absolute;\r\n    top: 150px;\r\n    left: 50px;\r\n    width: 50px;\r\n    height: 50px;\r\n    background-color: red;\r\n}\r\n\r\n.child3 {\r\n    position: absolute;\r\n    top: 50px;\r\n    left: 150px;\r\n    width: 300px;\r\n    height: 300px;\r\n    background-color: blueviolet;\r\n}\r\n\r\n.scroll-box2 {\r\n    position: absolute;\r\n    margin: 0px;\r\n    height: auto;\r\n    left: 30px;\r\n    right: 30px;\r\n    top: 30px;\r\n    bottom: 30px;\r\n    border: 1px dashed black; \r\n    \r\n}\r\n\r\n.big-area2 {\r\n    position: absolute; \r\n    width: 1000px; \r\n    height: 1000px; \r\n    background-image: url('/ngx-liquid-containers/assets/grid.png');\r\n}"
+module.exports = ".scroll-box1 {\r\n    margin-left: 50px;\r\n    margin-right: 50px;\r\n    margin-top: 30px;\r\n    height: 80vh;\r\n}\r\n\r\n.big-area1 {\r\n    position: absolute; \r\n    width: 3000px; \r\n    height: 3000px; \r\n    background-image: url('/ngx-liquid-containers/assets/grid.png');\r\n}\r\n\r\n.big-area1>p {\r\n    margin: 10px;\r\n}\r\n\r\n.shift-box1 {\r\n    left: 50px;\r\n    right: 50px;\r\n    top: 50px;\r\n    bottom: 50px;\r\n    border: 1px solid royalblue; \r\n}\r\n\r\n.child1 {\r\n    position: absolute;\r\n    top: 50px;\r\n    left: 50px;\r\n    width: 50px;\r\n    height: 50px;\r\n    background-color: blue;\r\n}\r\n\r\n.child2 {\r\n    position: absolute;\r\n    top: 150px;\r\n    left: 50px;\r\n    width: 50px;\r\n    height: 50px;\r\n    background-color: red;\r\n}\r\n\r\n.child3 {\r\n    position: absolute;\r\n    top: 50px;\r\n    left: 150px;\r\n    width: 300px;\r\n    height: 300px;\r\n    background-color: blueviolet;\r\n}\r\n\r\n.scroll-box2 {\r\n    position: absolute;\r\n    margin: 0px;\r\n    height: auto;\r\n    left: 30px;\r\n    right: 30px;\r\n    top: 30px;\r\n    bottom: 30px;\r\n    border: 1px dashed black; \r\n    \r\n}\r\n\r\n.big-area2 {\r\n    position: absolute; \r\n    width: 1000px; \r\n    height: 1000px; \r\n    background-image: url('/ngx-liquid-containers/assets/grid.png');\r\n}\r\n\r\n.shift-box2 {\r\n    left: 0px;\r\n    right: 0px;\r\n    top: 0px;\r\n    bottom: 0px;\r\n    border: 1px solid royalblue; \r\n}"
 
 /***/ }),
 
@@ -188,7 +188,7 @@ module.exports = ".scroll-box1 {\r\n    margin-left: 50px;\r\n    margin-right: 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<lc-scroll-box class=\"scroll-box1\" [sensitivity]=\"2\">\r\n    <div class=\"big-area\">\r\n        <p>Click and Drag this area</p>\r\n        <lc-shift-box class=\"shift-box1\">\r\n            <div class=\"child1 lc-shift-hook\"></div>\r\n            <div class=\"child2 lc-shift-hook\"></div>\r\n            <div class=\"child3 lc-shift-hook\">\r\n                <lc-scroll-box class=\"scroll-box2\" [sensitivity]=\"2\">\r\n                    <div class=\"big-area2\">\r\n                        <lc-shift-box class=\"shift-box1\">\r\n                                <div class=\"child1 lc-shift-hook\"></div>\r\n                        </lc-shift-box>\r\n                    </div>\r\n                </lc-scroll-box>    \r\n            </div>\r\n        </lc-shift-box>\r\n    </div>\r\n</lc-scroll-box>"
+module.exports = "<lc-scroll-box class=\"scroll-box1\" [sensitivity]=\"2\">\r\n    <div class=\"big-area1\">\r\n        <p>Click and Drag this area</p>\r\n        <lc-shift-box class=\"shift-box1\">\r\n            <div class=\"child1 lc-shift-hook\"></div>\r\n            <div class=\"child2 lc-shift-hook\"></div>\r\n            <div class=\"child3 lc-shift-hook\">\r\n                <lc-scroll-box class=\"scroll-box2\" [sensitivity]=\"2\">\r\n                    <div class=\"big-area2\">\r\n                        <lc-shift-box class=\"shift-box2\">\r\n                                <div class=\"child1 lc-shift-hook\"></div>\r\n                        </lc-shift-box>\r\n                    </div>\r\n                </lc-scroll-box>    \r\n            </div>\r\n        </lc-shift-box>\r\n    </div>\r\n</lc-scroll-box>"
 
 /***/ }),
 
@@ -303,7 +303,7 @@ var ScrollBoxEx1Component = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "lc-shift-box {\r\n    left: 50px;\r\n    right: 50px;\r\n    top: 30px;\r\n    height: 80vh;\r\n    border: 1px solid royalblue; \r\n    overflow: scroll;\r\n}\r\n\r\nlc-shift-box>p {\r\n    margin: 10px;\r\n}\r\n\r\n.background{\r\n    position: absolute; \r\n    width: 2000px; \r\n    height: 1000px; \r\n    background-image: url('/ngx-liquid-containers/assets/grid.png');\r\n}\r\n\r\n.child1 {\r\n    position: absolute;\r\n    border: 1px dashed coral;\r\n    width: 200px;\r\n    height: 100px;\r\n    left: 50px;\r\n    top: 100px;\r\n    background-color: blueviolet;\r\n}\r\n\r\n.child1>p {\r\n    margin: 10px;\r\n}\r\n\r\n.child2 {\r\n    position: absolute;\r\n    border: 1px dashed blueviolet;\r\n    width: 200px;\r\n    height: 200px;\r\n    left: 50px;\r\n    top: 250px;\r\n    background-color: greenyellow;\r\n}\r\n\r\n.child2 .hook {\r\n    margin: 20px;\r\n    background-color: coral;\r\n    border: 1px dashed black;\r\n    height: 40px;\r\n}\r\n\r\n.hook p {\r\n    margin: 10px;\r\n    background-color: yellow;\r\n    border: 1px dashed black;\r\n\r\n}\r\n\r\n.child2 .content {\r\n    position: relative;\r\n    margin: 20px;\r\n    background-color: deepskyblue;\r\n    border: 1px dashed black;\r\n    \r\n}\r\n\r\n.content p {\r\n    margin: 10px;\r\n}\r\n\r\n.child3{\r\n    position: absolute;\r\n    border: 1px dashed greenyellow;\r\n    width: 200px;\r\n    height: 200px;\r\n    left: 300px;\r\n    top: 100px;\r\n    padding: 10px;\r\n    background-color: mediumvioletred;\r\n}\r\n\r\n.child3 p {\r\n    margin: 0px;\r\n    margin-bottom: 10px;\r\n    border: 1px dashed greenyellow;\r\n}"
+module.exports = "lc-shift-box {\r\n    left: 50px;\r\n    right: 50px;\r\n    top: 30px;\r\n    height: 80vh;\r\n    border: 1px solid royalblue; \r\n    overflow: scroll;\r\n}\r\n\r\n.background>p {\r\n    margin: 10px;\r\n    -webkit-user-select: none;\r\n       -moz-user-select: none;\r\n        -ms-user-select: none;\r\n            user-select: none;\r\n}\r\n\r\n.background{\r\n    position: absolute; \r\n    width: 2000px; \r\n    height: 1000px; \r\n    background-image: url('/ngx-liquid-containers/assets/grid.png');\r\n}\r\n\r\n.child1 {\r\n    position: absolute;\r\n    border: 1px dashed coral;\r\n    width: 200px;\r\n    height: 100px;\r\n    left: 50px;\r\n    top: 100px;\r\n    background-color: blueviolet;\r\n}\r\n\r\n.child1>p {\r\n    margin: 10px;\r\n}\r\n\r\n.child2 {\r\n    position: absolute;\r\n    border: 1px dashed blueviolet;\r\n    width: 200px;\r\n    height: 200px;\r\n    left: 50px;\r\n    top: 250px;\r\n    background-color: greenyellow;\r\n}\r\n\r\n.child2 .hook {\r\n    margin: 20px;\r\n    background-color: coral;\r\n    border: 1px dashed black;\r\n    height: 40px;\r\n}\r\n\r\n.hook p {\r\n    margin: 10px;\r\n    background-color: yellow;\r\n    border: 1px dashed black;\r\n\r\n}\r\n\r\n.child2 .content {\r\n    position: relative;\r\n    margin: 20px;\r\n    background-color: deepskyblue;\r\n    border: 1px dashed black;\r\n    \r\n}\r\n\r\n.content p {\r\n    margin: 10px;\r\n}\r\n\r\n.child3{\r\n    position: absolute;\r\n    border: 1px dashed greenyellow;\r\n    width: 200px;\r\n    height: 200px;\r\n    left: 300px;\r\n    top: 100px;\r\n    padding: 10px;\r\n    background-color: mediumvioletred;\r\n}\r\n\r\n.child3 p {\r\n    margin: 0px;\r\n    margin-bottom: 10px;\r\n    border: 1px dashed greenyellow;\r\n}"
 
 /***/ }),
 
@@ -314,7 +314,7 @@ module.exports = "lc-shift-box {\r\n    left: 50px;\r\n    right: 50px;\r\n    t
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<lc-shift-box>\r\n    <div class=\"background\"></div>\r\n    <p>You can move all lc-shift-box children which has elements with \"lc-shift-hook\" class</p>\r\n    <div class=\"child1\">\r\n        <p>This child hasn't elements with \"lc-shift-hook\" class</p>\r\n    </div>\r\n\r\n    <div class=\"child2\">\r\n        <div class=\"lc-shift-hook hook\">\r\n            <p class=\"lc-shift-hook\">Drag me</p>\r\n        </div>\r\n        <div class=\"content\">\r\n            <p>Div (orange) and p (yellow) elements contain \"lc-shift-hook\" classes</p>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"child3 lc-shift-hook\">\r\n        <p>This child contains \"lc-shift-hook\" class. But p with this text doesn't.</p>\r\n        This text is innertext of the div element.\r\n    </div>\r\n\r\n</lc-shift-box>"
+module.exports = "<lc-shift-box>\r\n    <div class=\"background\">\r\n        <p>You can move all lc-shift-box children which has elements with \"lc-shift-hook\" class</p>\r\n    </div>\r\n\r\n    <div class=\"child1\">\r\n        <p>This child hasn't elements with \"lc-shift-hook\" class</p>\r\n    </div>\r\n\r\n    <div class=\"child2\">\r\n        <div class=\"lc-shift-hook hook\">\r\n            <p class=\"lc-shift-hook\">Drag me</p>\r\n        </div>\r\n        <div class=\"content\">\r\n            <p>Div (orange) and p (yellow) elements contain \"lc-shift-hook\" classes</p>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"child3 lc-shift-hook\">\r\n        <p>This child contains \"lc-shift-hook\" class. But p with this text doesn't.</p>\r\n        This text is innertext of the div element.\r\n    </div>\r\n\r\n</lc-shift-box>"
 
 /***/ }),
 
@@ -618,7 +618,7 @@ var AbstractElement = /** @class */ (function () {
         if (!translate) {
             return;
         }
-        var position = translate[0].match(/[-\d]+/g);
+        var position = translate[0].match(/[-\d\.]+/g);
         this.left = parseInt(position[0]);
         this.top = parseInt(position[1]);
     };
@@ -637,10 +637,7 @@ var AbstractElement = /** @class */ (function () {
 var LcShiftBox = /** @class */ (function () {
     function LcShiftBox(elementRef) {
         this.elementRef = elementRef;
-        this.cursorOffset = { fromLeft: 0, fromTop: 0 };
-        // HammerJS events can't stopPropagation();
-        // We use allowMove for prevent moving parent DOM-elements which use same dirrective.
-        // Native browser event onPointerDown sets allowMove true and stops propagation.
+        this.pointerOffset = { fromLeft: 0, fromTop: 0 };
         this.allowMove = false;
     }
     LcShiftBox.prototype.ngOnInit = function () {
@@ -657,7 +654,9 @@ var LcShiftBox = /** @class */ (function () {
         if (target.classList.contains("lc-shift-hook")) {
             var element = this.FindMovableElement(target);
             this.movableElement = new AbstractElement(element);
+            // Moves element on the foreground.
             this.containerElement.nativeElement.appendChild(element);
+            this.setPointerOffset({ x: event.clientX, y: event.clientY });
             this.allowMove = true;
         }
         event.stopPropagation();
@@ -668,32 +667,33 @@ var LcShiftBox = /** @class */ (function () {
         }
         return element;
     };
-    LcShiftBox.prototype.onMoveStart = function (event) {
+    LcShiftBox.prototype.setPointerOffset = function (pointerPosition) {
+        this.pointerOffset.fromLeft = pointerPosition.x - this.movableElement.left;
+        this.pointerOffset.fromTop = pointerPosition.y - this.movableElement.top;
+    };
+    LcShiftBox.prototype.onPointerMove = function (event) {
         if (!this.allowMove)
             return;
-        this.isMoving = true;
-        this.setCursorOffset({ x: event.center.x, y: event.center.y });
+        this.setElementPosition({ x: event.clientX, y: event.clientY });
     };
-    LcShiftBox.prototype.setCursorOffset = function (cursorPosition) {
-        this.cursorOffset.fromLeft = cursorPosition.x - this.movableElement.left;
-        this.cursorOffset.fromTop = cursorPosition.y - this.movableElement.top;
-    };
-    LcShiftBox.prototype.onMove = function (event) {
-        if (!this.isMoving)
-            return;
-        this.setElementPosition({ x: event.center.x, y: event.center.y });
-    };
-    LcShiftBox.prototype.setElementPosition = function (cursorPosition) {
-        var left = cursorPosition.x - this.cursorOffset.fromLeft;
-        var top = cursorPosition.y - this.cursorOffset.fromTop;
+    LcShiftBox.prototype.setElementPosition = function (pointerPosition) {
+        var left = pointerPosition.x - this.pointerOffset.fromLeft;
+        var top = pointerPosition.y - this.pointerOffset.fromTop;
         this.movableElement.setElementPosition({ left: left, top: top });
     };
-    LcShiftBox.prototype.onMoveEnd = function (event) {
-        this.isMoving = false;
+    LcShiftBox.prototype.onPointerEnd = function (event) {
         this.allowMove = false;
     };
+    LcShiftBox.prototype.onPointerLeave = function (event) {
+        if (this.allowMove) {
+            this.allowMove = false;
+            window.getSelection().removeAllRanges();
+        }
+    };
     LcShiftBox.prototype.onTouchMove = function (event) {
-        event.preventDefault();
+        if (this.allowMove) {
+            event.preventDefault();
+        }
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
@@ -706,9 +706,9 @@ var LcShiftBox = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./lc-shift-box.component.css */ "./src/components/lc-shift-box/lc-shift-box.component.css")],
             host: {
                 '(pointerdown)': 'onPointerDown($event)',
-                '(drag)': 'onMove($event)',
-                '(dragstart)': 'onMoveStart($event)',
-                '(dragend)': 'onMoveEnd($event)',
+                '(pointermove)': 'onPointerMove($event)',
+                '(pointerup)': 'onPointerEnd($event)',
+                '(pointerleave)': 'onPointerLeave($event)',
                 '(touchmove)': 'onTouchMove($event)'
             }
         }),
