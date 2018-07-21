@@ -1,8 +1,15 @@
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 .scroll-box1 {
+    flex: 1 0 auto;
     margin-left: 50px;
     margin-right: 50px;
     margin-top: 30px;
-    height: 80vh;
+    margin-bottom: 30px;
 }
 
 .big-area1 {
@@ -17,6 +24,7 @@
 }
 
 .shift-box1 {
+    position: absolute;
     left: 50px;
     right: 50px;
     top: 50px;
@@ -72,6 +80,7 @@
 }
 
 .shift-box2 {
+    position: absolute;
     left: 0px;
     right: 0px;
     top: 0px;

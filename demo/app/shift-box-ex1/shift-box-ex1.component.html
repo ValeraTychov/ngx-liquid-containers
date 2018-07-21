@@ -1,24 +1,27 @@
-<lc-shift-box>
-    <div class="background">
-        <p>You can move all lc-shift-box children which has elements with "lc-shift-hook" class</p>
-    </div>
-
-    <div class="child1">
-        <p>This child hasn't elements with "lc-shift-hook" class</p>
-    </div>
-
-    <div class="child2">
-        <div class="lc-shift-hook hook">
-            <p class="lc-shift-hook">Drag me</p>
+<div class="flex-container">
+    <lc-shift-box>
+        <div class="background">
+            <p>You can move all lc-shift-box children which has elements with "lc-shift-hook" class</p>
         </div>
-        <div class="content">
-            <p>Div (orange) and p (yellow) elements contain "lc-shift-hook" classes</p>
+
+        <div class="child1">
+            <p>This child hasn't elements with "lc-shift-hook" class</p>
         </div>
-    </div>
 
-    <div class="child3 lc-shift-hook">
-        <p>This child contains "lc-shift-hook" class. But p with this text doesn't.</p>
-        This text is innertext of the div element.
-    </div>
+        <div class="child2">
+            <div class="lc-shift-hook hook">
+                <p class="lc-shift-hook">Drag me</p>
+            </div>
+            <div class="content">
+                <p>Div (orange) and p (yellow) elements contain "lc-shift-hook" classes</p>
+            </div>
+        </div>
 
-</lc-shift-box>
+        <div class="child3 lc-shift-hook">
+            <p>This child contains "lc-shift-hook" class. But p with this text doesn't.</p>
+            This text is innertext of the div element.
+        </div>
+
+    </lc-shift-box>
+</div>
+
